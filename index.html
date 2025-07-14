@@ -1,95 +1,852 @@
-<!-- Tier 2.5 Cloud → Handoff -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Women's Health Services in Brownsville, TX | Local Care Providers</title>
-  <meta name="description" content="Explore women’s health services near you in Brownsville, TX. Serving both Price Rd and Southmost Rd areas with compassionate, accessible care.">
+  <meta name="description" content="Comprehensive women's health services in Brownsville, TX. Two convenient locations offering preventive care, annual checkups, and specialty services for women of all ages.">
+  <link rel="canonical" href="https://txcloudhub.github.io/healthdrop-southtx/">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-      background-color: #f9f9f9;
-      color: #222;
-      line-height: 1.7;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #4a5568;
+      overflow-x: hidden;
     }
 
-    h1 {
-      color: #2a2a2a;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    h2 {
-      color: #333;
-      font-size: 1.4rem;
-      margin-top: 2rem;
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 100%);
+      color: #4a5568;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(167, 139, 250, 0.1);
+      backdrop-filter: blur(10px);
     }
 
-    ul {
-      margin: 0.5rem 0 1.5rem 1.2rem;
-      padding-left: 1rem;
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    a {
-      color: #0066cc;
-      text-decoration: none;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      font-size: 1.5rem;
+      color: #ec4899;
+    }
+
+    .logo h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #6b46c1;
+      margin: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 50%, #ecfdf5 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ec4899" stop-opacity="0.03"/><stop offset="100%" stop-color="%23ec4899" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="300" r="200" fill="url(%23a)"/><circle cx="400" cy="700" r="180" fill="url(%23a)"/></svg>');
+      opacity: 0.6;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #6b46c1 0%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: #6b7280;
       font-weight: 500;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .hero .description {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #6b7280;
     }
 
-    p {
-      margin-bottom: 1.2rem;
+    .hero-image-inline {
+      margin: 40px auto;
+      max-width: 500px;
+      position: relative;
     }
 
-    article {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    .hero-image-inline img {
+      width: 100%;
+      height: auto;
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(167, 139, 250, 0.2);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ec4899 0%, #6b46c1 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.9);
+      color: #6b46c1;
+      border: 2px solid #d1d5db;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: #ffffff;
+      border-color: #ec4899;
+      color: #ec4899;
+    }
+
+    /* Trust Indicators */
+    .trust-section {
+      background: #ffffff;
+      padding: 60px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .trust-indicators {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 30px 20px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 100%);
+      transition: all 0.3s ease;
+    }
+
+    .trust-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(167, 139, 250, 0.1);
+    }
+
+    .trust-item i {
+      font-size: 2.5rem;
+      color: #ec4899;
+    }
+
+    .trust-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    .trust-item p {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .content-section:nth-child(even) {
+      background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 100%);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #4a5568;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: #6b7280;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .content-card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(167, 139, 250, 0.1);
+      text-align: left;
+      transition: all 0.3s ease;
+      border: 1px solid #f3f4f6;
+    }
+
+    .content-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(167, 139, 250, 0.15);
+      border-color: #ec4899;
+    }
+
+    .content-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .content-card i {
+      color: #ec4899;
+      font-size: 1.5rem;
+    }
+
+    .content-card p {
+      color: #6b7280;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .content-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .content-card li {
+      color: #6b7280;
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .content-card li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .feature-item {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: 0 5px 20px rgba(167, 139, 250, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(167, 139, 250, 0.15);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ec4899 0%, #6b46c1 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+    }
+
+    .feature-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .feature-item h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 15px;
+    }
+
+    .feature-item p {
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    /* Locations Section */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .location-card {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(167, 139, 250, 0.1);
+      border: 1px solid #f3f4f6;
+      transition: all 0.3s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(167, 139, 250, 0.15);
+      border-color: #ec4899;
+    }
+
+    .location-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .location-card i {
+      color: #ec4899;
+      font-size: 1.3rem;
+    }
+
+    .location-card .address {
+      font-size: 1.1rem;
+      color: #6b7280;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .location-card .details {
+      background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 100%);
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .location-card .details p {
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .location-card .details p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Call to Action Section */
+    .cta-section {
+      background: linear-gradient(135deg, #6b46c1 0%, #ec4899 100%);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="b" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="100" cy="100" r="100" fill="url(%23b)"/><circle cx="900" cy="200" r="150" fill="url(%23b)"/><circle cx="500" cy="800" r="120" fill="url(%23b)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .cta-link {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .cta-link:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      background: #1f2937;
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-section h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .footer-section p, .footer-section li {
+      color: #d1d5db;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section a {
+      color: #d1d5db;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #ec4899;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-link {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-indicators {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .trust-indicators {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <article class="cloud-page">
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-heart"></i>
+          <h1>Women's Health Services</h1>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <h1>Women's Health Services in Brownsville, TX</h1>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Women's Health Services in Brownsville, TX</h1>
+        <p class="subtitle">Accessible, Local Support for Your Wellness Journey</p>
+        <p class="description">
+          Finding quality care close to home matters. Our women's health services in Brownsville, TX, support patients throughout every stage of life — from annual checkups to ongoing wellness care.
+        </p>
+        <div class="hero-image-inline">
+          <img src="https://raw.githubusercontent.com/txcloudhub/healthdrop-southtx/refs/heads/main/womens-health-services-brownsville.avif" 
+               alt="Women's health services in Brownsville, TX - Compassionate care for women of all ages" 
+               loading="lazy">
+        </div>
+        <div class="cta-buttons">
+          <a href="https://southtxrelay.github.io/clinica-santa-maria/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-calendar-plus"></i>
+            Schedule Your Visit
+          </a>
+          <a href="#services" class="btn btn-secondary">
+            <i class="fas fa-arrow-down"></i>
+            View Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Accessible, Local Support for Your Wellness Journey</h2>
-    <p>Finding quality care close to home matters. Our women's health services in Brownsville, TX, support patients throughout every stage of life — from annual checkups to ongoing wellness care.</p>
+  <!-- Trust Indicators -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-indicators">
+        <div class="trust-item">
+          <i class="fas fa-user-md"></i>
+          <h3>Expert Care</h3>
+          <p>Experienced healthcare providers</p>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-heart"></i>
+          <h3>Compassionate Service</h3>
+          <p>Caring, personalized attention</p>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Convenient Locations</h3>
+          <p>Two accessible Brownsville sites</p>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-clock"></i>
+          <h3>Flexible Scheduling</h3>
+          <p>Appointments when you need them</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Two Convenient Brownsville Locations</h2>
-    <p>Whether you're located near the Price Rd or Southmost Rd area, local providers are here to help:</p>
-    <ul>
-      <li>95 E Price Rd, Brownsville, TX 78521</li>
-      <li>3855 Southmost Rd, Brownsville, TX 78521</li>
-    </ul>
+  <!-- Services Section -->
+  <section class="content-section" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Comprehensive Women's Health Services</h2>
+        <p>From preventive care to specialized treatments, we provide the healthcare services women need at every stage of life</p>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3><i class="fas fa-stethoscope"></i> Preventive Care</h3>
+          <p>Regular preventive care is the foundation of good health. Our comprehensive services help detect issues early and maintain your wellness.</p>
+          <ul>
+            <li>Annual wellness exams</li>
+            <li>Pap smears and cervical cancer screening</li>
+            <li>Breast cancer screening</li>
+            <li>Bone density testing</li>
+            <li>Immunizations and vaccinations</li>
+            <li>Health risk assessments</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3><i class="fas fa-heart"></i> Reproductive Health</h3>
+          <p>Complete reproductive health services to support you through all stages of your reproductive journey.</p>
+          <ul>
+            <li>Birth control counseling</li>
+            <li>Pregnancy testing and counseling</li>
+            <li>STD testing and treatment</li>
+            <li>Fertility counseling</li>
+            <li>Menopause management</li>
+            <li>Hormonal health support</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3><i class="fas fa-female"></i> Specialty Services</h3>
+          <p>Specialized care for specific women's health conditions and concerns, provided by experienced healthcare professionals.</p>
+          <ul>
+            <li>Gynecological consultations</li>
+            <li>Menstrual disorder treatment</li>
+            <li>Pelvic health services</li>
+            <li>Chronic condition management</li>
+            <li>Mental health support</li>
+            <li>Nutritional counseling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>Both clinics offer a range of preventive and specialty services tailored for women of all ages.</p>
+  <!-- Locations Section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Convenient Brownsville Locations</h2>
+        <p>Multiple accessible locations throughout Brownsville, Texas to serve you better</p>
+      </div>
+      <div class="locations-grid">
+        <div class="location-card">
+          <h3><i class="fas fa-map-marker-alt"></i> Brownsville Clinic</h3>
+          <div class="address">
+            Conveniently located in<br>
+            Brownsville, Texas
+          </div>
+          <div class="details">
+            <p><strong>Convenient Access:</strong> Easy parking and accessibility</p>
+            <p><strong>Services:</strong> Full range of women's health services</p>
+            <p><strong>Appointment Types:</strong> Routine care, preventive services, consultations</p>
+          </div>
+        </div>
+        <div class="location-card">
+          <h3><i class="fas fa-map-marker-alt"></i> Additional Location</h3>
+          <div class="address">
+            Another convenient location in<br>
+            Brownsville, Texas
+          </div>
+          <div class="details">
+            <p><strong>Convenient Access:</strong> Easy parking and accessibility</p>
+            <p><strong>Services:</strong> Full range of women's health services</p>
+            <p><strong>Appointment Types:</strong> Routine care, preventive services, consultations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>To learn more about services, availability, and how to schedule a visit, <a href="https://southtxrelay.github.io/clinica-santa-maria/" target="_blank" rel="noopener noreferrer">visit this page</a>.</p>
+  <!-- Why Choose Us Section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Our Women's Health Services</h2>
+        <p>Experience personalized, compassionate care designed specifically for women's unique health needs</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <h3>Experienced Providers</h3>
+          <p>Our healthcare professionals specialize in women's health and are dedicated to providing the highest quality care tailored to your individual needs.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3>Comprehensive Care</h3>
+          <p>From routine checkups to specialized treatments, we offer a full range of services to support your health throughout all stages of life.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Compassionate Approach</h3>
+          <p>We understand that women's health needs are unique. Our caring approach ensures you feel comfortable and supported during every visit.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Convenient Locations</h3>
+          <p>Two convenient Brownsville locations make it easy to access quality women's health services close to home, work, or school.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </article>
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Schedule Your Visit?</h2>
+        <p>Take the first step toward better health. Contact us today to learn more about our services and schedule your appointment.</p>
+        <a href="https://southtxrelay.github.io/clinica-santa-maria/" class="cta-link" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-calendar-plus"></i> Schedule Your Appointment
+        </a>
+        <p style="margin-top: 20px; font-size: 1rem; opacity: 0.9;">Quality women's health care when you need it most</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Women's Health Services</h3>
+          <p>Comprehensive women's health care in Brownsville, TX, providing preventive care, specialty services, and ongoing wellness support for women of all ages.</p>
+          <p style="margin-top: 15px;"><strong>Service Areas:</strong> Brownsville, Harlingen, San Benito, Los Fresnos, Port Isabel, Rio Grande Valley</p>
+        </div>
+        <div class="footer-section">
+          <h3>Our Locations</h3>
+          <p><strong>Brownsville Clinics:</strong><br>Multiple convenient locations throughout Brownsville, Texas</p>
+          <p style="margin-top: 15px;">All locations offer comprehensive women's health services with convenient scheduling options.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Health Services</h3>
+          <ul>
+            <li>Annual wellness exams</li>
+            <li>Preventive care services</li>
+            <li>Reproductive health</li>
+            <li>Specialty consultations</li>
+            <li>Health screenings</li>
+            <li>Ongoing wellness support</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Patient Care</h3>
+          <p><strong>Experienced Providers:</strong><br>Specialized women's health professionals</p>
+          <p><strong>Compassionate Care:</strong><br>Personalized attention for every patient</p>
+          <p><strong>Convenient Access:</strong><br>Two accessible Brownsville locations</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Women's Health Services Brownsville, TX. Professional healthcare services for women of all ages in the Rio Grande Valley.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "womens-health-brownsville",
     "name": "Women's Health Services in Brownsville, TX",
-    "description": "Explore women’s health services near you in Brownsville, TX. Serving both Price Rd and Southmost Rd areas with compassionate, accessible care.",
-    "url": "https://southtxunbranded.github.io/womens-health-tx/",
-    "@id": "https://southtxunbranded.github.io/womens-health-tx/",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://southtxunbranded.github.io/womens-health-tx/"
-    }
+    "description": "Comprehensive women's health services in Brownsville, TX. Preventive care, wellness exams, and specialty services for women of all ages."
   }
   </script>
 </body>
-</html>
+</html> 
